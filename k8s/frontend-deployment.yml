@@ -10,20 +10,14 @@ spec:
       app: frontend
   template:
     metadata:
-      name: frontend-pod
-      namespace: chat-app
-      labels: 
+      labels:
         app: frontend
     spec:
       containers:
-      - name: chatapp-frontend
-        image: trainwithshubham/chatapp-frontend
-        ports:
-        - containerPort: 80
-        env:
-        - name: NODE_ENV
-          value: production
-          
-
-
-
+        - image: prathamvish333/chatapp-frontend:latest
+          name: chat-app-frontend
+          ports:
+            - containerPort: 80
+          env:
+            - name: NODE_ENV
+              value: "production"
